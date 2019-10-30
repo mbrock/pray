@@ -1,0 +1,22 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>pray</title>
+<style>
+* { text-align: center; font: 32px/42px "iosevka aile"; }
+body { max-width: 32rem; margin: 8rem auto; overflow-y: hidden; }
+body, input { background: #000; color: ivory; }
+input { border: 0; width: 100%; font-weight: bold; }
+p { transition: all 60s ease-out; opacity: 1; }
+.fade { opacity: 0; color: purple; }
+</style>
+<input id=x autofocus />
+<script>
+x.onkeypress = e => {
+  if (e.key == "Enter") {
+    let y = document.createElement("p")
+    y.innerText = x.value; x.value = ""
+    x.insertAdjacentElement("afterend", y)
+    setTimeout(() => { y.classList.add("fade") }, 100)
+  }
+}
+</script>
