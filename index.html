@@ -2,12 +2,17 @@
 <meta charset=utf-8>
 <title>swa.sh</title>
 <style>
-* { text-align: center; font: 32px/42px "iosevka aile"; }
+* { text-align: center; font: 32px/32px "iosevka aile"; }
 body { max-width: 32rem; margin: 8rem auto; overflow-y: hidden; }
 body, input { background: #000; color: ivory; }
-input { border: 0; width: 100%; font-weight: bold; }
-p { transition: all 60s ease-out; opacity: 1; }
+input { border: 0; width: 100%; font-weight: 500; }
+p { transition: all 45s ease-out; opacity: 1; min-height: 0.5rem; }
 .fade { opacity: 0; color: purple; }
+
+@font-face { font-family: "iosevka aile"; font-weight: 400; 
+  src: url(iosevka-aile-regular.woff) format('woff'); }
+@font-face { font-family: "iosevka aile"; font-weight: 500;
+  src: url(iosevka-aile-medium.woff) format('woff'); }
 </style>
 <input id=x autofocus />
 <script>
