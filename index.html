@@ -17,6 +17,7 @@ p { transition: all 45s ease-out; opacity: 1; min-height: 0.5rem; }
 <input id=x autofocus />
 <script>
 x.onkeypress = e => {
+  document.fullscreenElement || document.documentElement.requestFullscreen()
   if (e.key == "Enter") {
     let y = document.createElement("p")
     y.innerText = x.value; x.value = ""
