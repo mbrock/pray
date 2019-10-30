@@ -3,17 +3,19 @@
 <title>swa.sh</title>
 <style>
 * { text-align: center; font: 32px/32px "iosevka aile"; }
-body { max-width: 32rem; margin: 8rem auto; overflow-y: hidden; }
+body { max-width: 32rem; margin: 2rem auto; overflow-y: hidden; }
+body { height: 100vh; }
 body, input { background: #000; color: ivory; }
 input { border: 0; width: 100%; font-weight: 500; }
 p { transition: all 45s ease-out; opacity: 1; min-height: 0.5rem; }
 .fade { opacity: 0; color: purple; }
-
+div { max-height: 60vh; overflow-y: hidden; }
 @font-face { font-family: "iosevka aile"; font-weight: 400; 
   src: url(iosevka-aile-regular.woff) format('woff'); }
 @font-face { font-family: "iosevka aile"; font-weight: 500;
   src: url(iosevka-aile-medium.woff) format('woff'); }
 </style>
+<div id=xs></div>
 <input id=x autofocus />
 <script>
 x.onkeypress = e => {
@@ -21,7 +23,8 @@ x.onkeypress = e => {
   if (e.key == "Enter") {
     let y = document.createElement("p")
     y.innerText = x.value; x.value = ""
-    x.insertAdjacentElement("afterend", y)
+    xs.appendChild(y)
+    xs.scrollTop = xs.scrollHeight
     setTimeout(() => { y.classList.add("fade") }, 100)
   }
 }
